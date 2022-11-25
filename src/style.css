@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: Japanese;
+  src: url("/fonts/japanese.otf") format("opentype");
+}
+
+.schedule-label {
+  background: linear-gradient(
+    89.49deg,
+    rgba(244, 220, 0, 0) 0.44%,
+    #f4dc00 53.61%,
+    rgba(244, 220, 0, 0) 99.04%
+  );
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
