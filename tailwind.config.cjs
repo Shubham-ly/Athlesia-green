@@ -8,6 +8,13 @@ module.exports = {
       },
       fontFamily: {
         japanese: "Japanese",
+        secondary: "secondary",
+      },
+      fontSize: {
+        sm: ["14px", "20px"],
+        base: ["16px", "24px"],
+        lg: ["24px", "21px"],
+        xl: ["24px", "32px"],
       },
     },
   },

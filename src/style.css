@@ -7,6 +7,11 @@
   src: url("/fonts/japanese.otf") format("opentype");
 }
 
+@font-face {
+  font-family: secondary;
+  src: url("/fonts/OctoberCompressedTamil.ttc") format("opentype");
+}
+
 .schedule-label {
   background: linear-gradient(
     89.49deg,
@@ -17,6 +22,35 @@
 }
 
 html,
-body {
+body,
+.wrapper {
   scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
+#headerBackgroundPrimary {
+  transform: translateY(-38%) translateZ(-2px) scale(1.2);
+  @apply min-w-full object-cover absolute top-full;
+}
+
+#headerForeground {
+  transform: translateY(-60%) translateZ(-2px) scale(1.2);
+  @apply min-w-full object-cover absolute top-full;
+}
+
+@media screen and (min-width: 768px) {
+  #headerForeground {
+    transform: translateY(-90%) translateZ(-2px) scale(1.2);
+  }
+  #headerBackgroundPrimary {
+    transform: translateY(-44%) translateZ(-8px) scale(1.8);
+  }
+}
+
+img {
+  @apply select-none pointer-events-none;
 }
