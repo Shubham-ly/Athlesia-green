@@ -1,30 +1,20 @@
 import "./style.css";
 
-const samuraiCarousel = document.querySelector(".samurai-carousel")!;
+const games = document.querySelectorAll("#games img");
+games.forEach((game: any, index) => {
+  game.style.setProperty("--animation-order", index);
+});
 
-// for (let i = 1; i <= 21; i++) {
-//   samuraiCarousel.innerHTML += `<div class="carousel-cell w-full flex items-center justify-center">
-//           <img
-//             class="w-[264px] md:w-[519px] select-none pointer-events-none"
-//             src="/jerseys/${i}.png"
-//             alt=""
-//           />
-//         </div>`;
-// }
+const callback = (entries: any, observer: any) => {
+  entries.forEach((entry: any) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("fade-in");
+      return;
+    }
+    entry.target.classList.remove("fade-in");
+  });
+};
 
-// setTimeout(() => {
-//   new Flickity(samuraiCarousel, {
-//     pageDots: false,
-//     draggable: true,
-//     wrapAround: true,
-//     cellSelector: ".carousel-cell",
-//   });
-// }, 1000);
-
-// new Flickity(".schedule-carousel", {
-//   autoPlay: false,
-//   //   pageDots: false,
-//   draggable: true,
-//   wrapAround: false,
-//   cellSelector: ".carousel-cell",
-// });
+const options: IntersectionObserverInit = {};
+const observer = new IntersectionObserver(callback, options);
+games.forEach((game) => observer.observe(game));

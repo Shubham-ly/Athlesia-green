@@ -37,6 +37,23 @@
       </span>
     </nav>
 
+    <button
+      onclick="togglePlay()"
+      title="Play"
+      id="playIcon"
+      class="w-14 h-14 md:w-24 md:h-24 fixed z-[100] bottom-10 right-8"
+    >
+      <img
+        class="h-full w-full"
+        src="data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='40' cy='40' r='40' fill='%2308DD61' fill-opacity='0.3'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M44 26.2328V25.8308C44 24.5648 45.26 23.6604 46.42 24.1226C53.2 26.7151 58 33.2866 58 41.0036C58 48.7207 53.2 55.2922 46.42 57.8847C45.26 58.3268 44 57.4425 44 56.1765V55.7745C44 55.0109 44.48 54.3477 45.2 54.0663C50.36 51.9964 54 46.912 54 41.0036C54 35.0953 50.36 30.0109 45.2 27.941C44.5 27.6596 44 26.9964 44 26.2328ZM22 37.0639V44.9558C22 46.041 22.9 46.9288 24 46.9288H30L36.58 53.4199C37.84 54.6629 40 53.7751 40 52.0191V29.9809C40 28.2249 37.84 27.3371 36.58 28.5801L30 35.0909H24C22.9 35.0909 22 35.9788 22 37.0639ZM50 40.0099C50 36.4919 47.552 33.4708 44 32V48C47.552 46.5491 50 43.528 50 40.0099Z' fill='white'/%3E%3C/svg%3E"
+        alt="play"
+      />
+    </button>
+    <audio controls autoplay class="hidden" id="myAudio">
+      <source src="/bg-music.mp3" type="audio/ogg" />
+      Your browser does not support the audio element.
+    </audio>
+
     <div
       style="perspective: 10px"
       class="wrapper h-screen overflow-x-hidden relative"
@@ -56,24 +73,21 @@
           src="/background-secondary.svg"
           alt="Background Secondary"
         />
+        <h1
+          class="text-5xl md:text-8xl uppercase font-japanese fixed md:top-[40%] top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 text-center"
+        >
+          Green Samurais
+        </h1>
         <img
           id="headerBackgroundPrimary"
           src="/background-primary.svg"
           alt="Background Primary"
         />
-        <h1
-          class="text-5xl md:text-8xl uppercase font-japanese absolute md:top-[40%] top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 text-center"
-        >
-          Green Samurais
-        </h1>
-        <img src="/foreground.svg" id="headerForeground" alt="Foreground" />
+        <img src="/test-fg.svg" id="headerForeground" alt="Foreground" />
       </header>
 
       <!-- Section - 1 -->
-      <section
-        id="game-story"
-        class="flex flex-col md:flex-row min-h-screen bg-primary"
-      >
+      <section id="game-story" class="flex flex-col md:flex-row min-h-screen">
         <div
           class="flex flex-col gap-4 md:gap-6 mt-24 pl-5 px-5 md:pl-[108px] md:flex-1 self-center"
         >
@@ -88,25 +102,9 @@
             everyone a prosperous life.
           </p>
         </div>
-        <div class="md:flex-1">
+        <div class="md:flex-1 bg-primary md:bg-transparent">
           <img class="h-full w-full" src="/story.svg" alt="The Game Story" />
         </div>
-        <button
-          onclick="togglePlay()"
-          title="Play"
-          id="icon"
-          class="fixed z-[100] bottom-10 right-8 bg-green-600 w-16 h-16 rounded-full drop-shadow-lg flex justify-center items-center text-white text-3xl hover:bg-green-700 opacity-40 hover:drop-shadow-2xl hover:animate-pulse duration-300 backdropacity-40 filter blurblur-sml"
-        >
-          <img
-            class="h-2/4 w-2/4 invert filter"
-            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='512px' height='512px' viewBox='0 0 512 512'%3E%3Ctitle%3Eionicons-v5-c%3C/title%3E%3Cpath d='M133,440a35.37,35.37,0,0,1-17.5-4.67c-12-6.8-19.46-20-19.46-34.33V111c0-14.37,7.46-27.53,19.46-34.33a35.13,35.13,0,0,1,35.77.45L399.12,225.48a36,36,0,0,1,0,61L151.23,434.88A35.5,35.5,0,0,1,133,440Z'/%3E%3C/svg%3E"
-            alt="play"
-          />
-        </button>
-        <audio controls autoplay class="hidden" id="myAudio">
-          <source src="/bg-music.mp3" type="audio/ogg" />
-          Your browser does not support the audio element.
-        </audio>
       </section>
       <section class="flex flex-col gap-4 md:gap-6 text-center">
         <h3 class="uppercase text-2xl md:text-[40px] font-japanese">
@@ -151,44 +149,44 @@
           to win it all.
         </p>
         <div
-          style="max-width: 760px"
+          id="games"
           class="grid grid-cols-3 md:flex md:justify-center flex-wrap px-5 md:px-16 -translate-y-16 h-[520px] md:h-auto self-center"
         >
-          <img class="mx-auto md:mx-0" src="/cricket.svg" alt="" />
-          <img class="mx-auto md:mx-0" src="/football.svg" alt="" />
-          <img class="mx-auto md:mx-0" src="/throwball.svg" alt="" />
+          <img class="mx-auto md:mx-0 game-card" src="/cricket.svg" alt="" />
+          <img class="mx-auto md:mx-0 game-card" src="/football.svg" alt="" />
+          <img class="mx-auto md:mx-0 game-card" src="/throwball.svg" alt="" />
           <img
             style="z-index: -2"
-            class="-translate-y-24 md:-translate-y-0 mx-auto md:mx-0"
+            class="game-card -translate-y-24 md:-translate-y-0 mx-auto md:mx-0"
             src="/carrom.svg"
             alt=""
           />
           <img
             style="z-index: -2"
-            class="-translate-y-24 md:-translate-y-0 mx-auto md:mx-0"
+            class="game-card -translate-y-24 md:-translate-y-0 mx-auto md:mx-0"
             src="/dart.svg"
             alt=""
           />
           <img
             style="z-index: -2"
-            class="-translate-y-24 md:-translate-y-0 mx-auto md:mx-0"
+            class="game-card -translate-y-24 md:-translate-y-0 mx-auto md:mx-0"
             src="/badminton.svg"
             alt=""
           />
           <img
-            class="-translate-y-48 md:-translate-y-20 mx-auto md:mx-0"
+            class="game-card -translate-y-48 md:-translate-y-0 mx-auto md:mx-0"
             style="z-index: -1"
             src="/jenga.svg"
             alt=""
           />
           <img
-            class="-translate-y-48 md:-translate-y-20 mx-auto md:mx-0"
+            class="game-card -translate-y-48 md:-translate-y-0 mx-auto md:mx-0"
             style="z-index: -1"
             src="/langdi.svg"
             alt=""
           />
           <img
-            class="-translate-y-48 md:-translate-y-20 mx-auto md:mx-0"
+            class="game-card -translate-y-48 md:-translate-y-0 mx-auto md:mx-0"
             style="z-index: -1"
             src="/online-games.svg"
             alt=""
@@ -532,7 +530,7 @@
             <span class="text-green-400"> The Veterans of victory </span>
           </h3>
         </div>
-        <div class="z-50 mt-12 md:mt-52">
+        <div class="z-50 my-12 md:mt-52">
           <h3 class="text-[18px] md:text-4xl font-secondary">
             <span class="opacity-60"> Powered by </span>
             <a class="text-green-400" href="https://lemonyellow.net">
@@ -542,12 +540,12 @@
           <h3 class="text-base md:text-2xl font-secondary pt-2 md:pt-4">
             Sameer Bhambere, Amit Bhambere & Priyanka Baya
           </h3>
-          <h6
-            class="text-sm md:text-[20px] font-secondary opacity-40 mt-8 md:mt-24"
-          >
-            Copyright 2022
-          </h6>
         </div>
+        <h6
+          class="text-sm md:text-[20px] font-secondary opacity-40 mt-8 md:mt-24 absolute -bottom-5 left-2/4 -translate-x-2/4"
+        >
+          Copyright 2022
+        </h6>
       </section>
     </div>
     <script type="module" src="/src/main.ts"></script>
@@ -569,6 +567,7 @@
           autoplay: true,
           draggable: true,
           wrapAround: true,
+          lazyLoad: true,
           cellSelector: ".carousel-cell",
         });
         new Flickity(".schedule-carousel", {
@@ -579,9 +578,22 @@
           cellSelector: ".carousel-cell",
         });
       }, 500);
+
+      const playIconButton = document.querySelector("#playIcon");
+
       function togglePlay() {
-        return myAudio.paused ? myAudio.play() : myAudio.pause();
+        if (myAudio.paused) {
+          myAudio.play();
+          playIconButton.querySelector("img").setAttribute("src", playIcon);
+          return;
+        }
+        myAudio.pause();
+        playIconButton.querySelector("img").setAttribute("src", muteIcon);
       }
+
+      const playIcon = `data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='40' cy='40' r='40' fill='%2308DD61' fill-opacity='0.3'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M44 26.2328V25.8308C44 24.5648 45.26 23.6604 46.42 24.1226C53.2 26.7151 58 33.2866 58 41.0036C58 48.7207 53.2 55.2922 46.42 57.8847C45.26 58.3268 44 57.4425 44 56.1765V55.7745C44 55.0109 44.48 54.3477 45.2 54.0663C50.36 51.9964 54 46.912 54 41.0036C54 35.0953 50.36 30.0109 45.2 27.941C44.5 27.6596 44 26.9964 44 26.2328ZM22 37.0639V44.9558C22 46.041 22.9 46.9288 24 46.9288H30L36.58 53.4199C37.84 54.6629 40 53.7751 40 52.0191V29.9809C40 28.2249 37.84 27.3371 36.58 28.5801L30 35.0909H24C22.9 35.0909 22 35.9788 22 37.0639ZM50 40.0099C50 36.4919 47.552 33.4708 44 32V48C47.552 46.5491 50 43.528 50 40.0099Z' fill='white'/%3E%3C/svg%3E`;
+
+      const muteIcon = `data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='40' cy='40' r='40' fill='%2308DD61' fill-opacity='0.3'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M53.18 43.0219C53.7 41.601 54 40.0633 54 38.4673C54 32.7447 50.36 27.8397 45.22 25.8154C44.5 25.5429 44 24.9005 44 24.1609V23.7911C44 22.5648 45.26 21.6694 46.44 22.1171C53.2 24.628 58 31.0124 58 38.4673C58 41.1728 57.36 43.7227 56.24 46L53.18 43.0219ZM23.2848 25.3431C22.4894 24.5772 22.4894 23.3402 23.2848 22.5744C24.1006 21.8085 25.3854 21.8085 26.1807 22.5744L57.4035 52.6569C58.1988 53.4228 58.1988 54.6598 57.4035 55.4256C56.6081 56.1914 55.3233 56.1914 54.528 55.4256L51.7952 52.7944C50.4288 53.8547 48.8993 54.7187 47.2678 55.3667C45.9218 55.8969 44.4331 54.9936 44.4331 53.5798C44.4331 52.814 44.8817 52.0679 45.6159 51.7733C46.7988 51.3217 47.8796 50.713 48.8789 49.9864L40.3543 41.7785V49.9668C40.3543 51.7144 38.1518 52.598 36.867 51.361L30.1575 44.9007H24.0394C22.9177 44.9007 22 44.017 22 42.937V35.0826C22 34.0026 22.9177 33.119 24.0394 33.119H30.1575L30.7489 32.5299L23.2848 25.3431ZM36.3617 26.5054L36 26.7952L40 30V27.6987C40 26.1815 37.7021 25.4314 36.3617 26.5054ZM44 32C47.552 33.3864 50 36.2342 50 39.5504C50 39.7002 49.976 39.8501 49.952 40L44 35.3536V32Z' fill='white' fill-opacity='0.5'/%3E%3C/svg%3E`;
     </script>
   </body>
 </html>
