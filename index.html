@@ -91,6 +91,22 @@
         <div class="md:flex-1">
           <img class="h-full w-full" src="/story.svg" alt="The Game Story" />
         </div>
+        <button
+          onclick="togglePlay()"
+          title="Play"
+          id="icon"
+          class="fixed z-[100] bottom-10 right-8 bg-green-600 w-16 h-16 rounded-full drop-shadow-lg flex justify-center items-center text-white text-3xl hover:bg-green-700 opacity-40 hover:drop-shadow-2xl hover:animate-pulse duration-300 backdropacity-40 filter blurblur-sml"
+        >
+          <img
+            class="h-2/4 w-2/4 invert filter"
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='512px' height='512px' viewBox='0 0 512 512'%3E%3Ctitle%3Eionicons-v5-c%3C/title%3E%3Cpath d='M133,440a35.37,35.37,0,0,1-17.5-4.67c-12-6.8-19.46-20-19.46-34.33V111c0-14.37,7.46-27.53,19.46-34.33a35.13,35.13,0,0,1,35.77.45L399.12,225.48a36,36,0,0,1,0,61L151.23,434.88A35.5,35.5,0,0,1,133,440Z'/%3E%3C/svg%3E"
+            alt="play"
+          />
+        </button>
+        <audio controls autoplay class="hidden" id="myAudio">
+          <source src="/bg-music.mp3" type="audio/ogg" />
+          Your browser does not support the audio element.
+        </audio>
       </section>
       <section class="flex flex-col gap-4 md:gap-6 text-center">
         <h3 class="uppercase text-2xl md:text-[40px] font-japanese">
@@ -346,7 +362,7 @@
               >
                 Jenga
                 <span
-                  class="font-japanese flex gap-4 items-center flex-[0.8] mb-6 md:flex-grow-0"
+                  class="font-japanese flex gap-1 md:gap-4 items-center flex-[0.8] mb-6 md:flex-grow-0"
                 >
                   <span class="text-green-400">Green</span>
                   <img class="w-8" src="/swords.svg" alt="" />
@@ -400,7 +416,7 @@
               >
                 Badminton
                 <span
-                  class="font-japanese flex gap-4 items-center flex-[0.8] mb-6 md:flex-grow-0"
+                  class="font-japanese flex gap-1 md:gap-4 items-center flex-[0.8] mb-6 md:flex-grow-0"
                 >
                   <span class="text-red-400">Red</span>
                   <img class="w-8" src="/swords.svg" alt="" />
@@ -414,7 +430,7 @@
               >
                 Langdi
                 <span
-                  class="font-japanese flex gap-4 items-center flex-[0.8] mb-6 md:flex-grow-0"
+                  class="font-japanese flex gap-1 md:gap-4 items-center flex-[0.8] mb-6 md:flex-grow-0"
                 >
                   <span class="text-green-400">Green</span>
                   <img class="w-8" src="/swords.svg" alt="" />
@@ -449,7 +465,7 @@
                 Sat, 14th January
               </div>
               <span
-                class="flex justify-between md:justify-center md:text-4xl uppercase items-center mt-6 md:gap-24"
+                class="flex justify-between md:justify-center md:text-4xl uppercase items-center mt-6 md:gap-24 text-center"
               >
                 <span
                   class="font-japanese flex justify-center items-center flex-[0.8]"
@@ -500,22 +516,23 @@
       <section
         id="samurais"
         style="background-image: url('/game-moon-light.svg')"
-        class="min-h-screen text-center bg-cover bg-no-repeat relative justify-between flex flex-col bg-top"
+        class="text-center bg-cover bg-no-repeat relative justify-between flex flex-col bg-top"
       >
         <div class="flex flex-col items-center justify-between">
+          <img
+            class="md:inline absolute left-0 -bottom-[20%] object-cover w-full"
+            src="/grass.svg"
+            alt="flags"
+          />
           <div class="w-[80px] md:w-[162px] mb-8">
             <img class="h-100 w-100" src="/logo.svg" alt="Green Samurais" />
           </div>
-          <h3 class="uppercase text-2xl mb-8 md:text-[40px] font-japanese">
-            Green Samurais
-          </h3>
-          <h3
-            class="uppercase text-2xl text-green-400 md:text-[40px] font-japanese"
-          >
-            The Veterans of victory
+          <h3 class="uppercase text-[20px] md:text-5xl mb-8 font-japanese z-10">
+            <span class="md:text-4xl">Green Samurais </span> <br />
+            <span class="text-green-400"> The Veterans of victory </span>
           </h3>
         </div>
-        <div class="z-50">
+        <div class="z-50 mt-12 md:mt-52">
           <h3 class="text-[18px] md:text-4xl font-secondary">
             <span class="opacity-60"> Powered by </span>
             <span class="text-green-400"> Lemon Yellow </span>
@@ -529,11 +546,6 @@
             Copyright 2022
           </h6>
         </div>
-        <img
-          class="md:inline absolute left-0 -bottom-[20%] object-cover w-full"
-          src="/grass.svg"
-          alt="flags"
-        />
       </section>
     </div>
     <script type="module" src="/src/main.ts"></script>
@@ -565,6 +577,9 @@
           cellSelector: ".carousel-cell",
         });
       }, 500);
+      function togglePlay() {
+        return myAudio.paused ? myAudio.play() : myAudio.pause();
+      }
     </script>
   </body>
 </html>
