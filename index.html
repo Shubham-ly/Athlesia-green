@@ -1,484 +1,603 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/logo.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Green Samurais</title>
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/flickity@2/dist/flickity.min.css"
-    />
-    <script
-      defer
-      src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"
-    ></script>
-  </head>
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/logo.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Green Samurais</title>
+		<link
+			rel="stylesheet"
+			href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+		/>
+		<script
+			defer
+			src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"
+		></script>
+	</head>
 
-  <body class="bg-primary text-white">
-    <div style="perspective: 10px" class="wrapper relative h-screen">
-      <div
-        id="background-secondary"
-        style="transform-style: preserve-3d; z-index: -1"
-        class="absolute min-h-full min-w-full select-none pointer-events-none overflow-x-hidden"
-      >
-        <img
-          class="h-screen object-cover w-full"
-          src="/background-secondary.svg"
-          alt="Background Secondary"
-        />
-        <img
-          src="/background-primary.svg"
-          class="min-w-full object-cover absolute top-full transform -translate-y-full"
-          alt="Background Primary"
-        />
-        <img
-          src="/foreground.svg"
-          class="min-w-full object-cover absolute top-full transform -translate-y-full"
-          alt="Foreground"
-        />
-      </div>
-    </div>
-    <nav
-      style="
-        background: linear-gradient(
-          180deg,
-          rgba(0, 0, 0, 0.15) 0%,
-          rgba(6, 160, 70, 0) 99.8%
-        );
-      "
-      class="flex flex-col md:flex-row md:justify-between md:px-[60px] gap-6 pt-4 md:pt-2 items-center backdrop-blur-xl fixed w-full z-20 top-0"
-    >
-      <div class="w-[80px] md:w-[88px]">
-        <img class="h-100 w-100" src="/logo.png" alt="Green Samurais" />
-      </div>
-      <span class="flex gap-8 md:gap-16 md:text-lg text-base ">
-        <a class="font-japanese" href="#game-story">Story</a>
-        <a class="font-japanese" href="#games">Games</a>
-        <a class="font-japanese" href="#samurais">Samurais</a>
-        <a class="font-japanese" href="#battles">Battles</a>
-      </span>
-    </nav>
+	<body class="bg-primary text-white">
+		<div style="perspective: 10px" class="wrapper relative h-screen">
+			<div
+				id="background-secondary"
+				style="transform-style: preserve-3d; z-index: -1"
+				class="absolute min-h-full min-w-full select-none pointer-events-none overflow-x-hidden"
+			>
+				<img
+					class="h-screen object-cover w-full"
+					src="/background-secondary.svg"
+					alt="Background Secondary"
+				/>
+				<img
+					src="/background-primary.svg"
+					class="min-w-full object-cover absolute top-full transform -translate-y-full"
+					alt="Background Primary"
+				/>
+				<img
+					src="/foreground.svg"
+					class="min-w-full object-cover absolute top-full transform -translate-y-full"
+					alt="Foreground"
+				/>
+			</div>
+		</div>
+		<nav
+			style="
+				background: linear-gradient(
+					180deg,
+					rgba(0, 0, 0, 0.15) 0%,
+					rgba(6, 160, 70, 0) 99.8%
+				);
+			"
+			class="flex flex-col md:flex-row md:justify-between md:px-[60px] gap-6 pt-4 md:pt-2 items-center backdrop-blur-xl fixed w-full z-20 top-0"
+		>
+			<div class="w-[80px] md:w-[88px]">
+				<img class="h-100 w-100" src="/logo.png" alt="Green Samurais" />
+			</div>
+			<span class="flex gap-8 md:gap-16 md:text-lg text-base">
+				<a class="font-japanese" href="#game-story">Story</a>
+				<a class="font-japanese" href="#games">Games</a>
+				<a class="font-japanese" href="#samurais">Samurais</a>
+				<a class="font-japanese" href="#battles">Battles</a>
+			</span>
+		</nav>
 
-    <!-- Section - 1 -->
-    <section id="game-story" class="flex flex-col md:flex-row min-h-screen">
-      <div
-        class="flex flex-col gap-4 md:gap-6 mt-24 pl-5 px-5 md:pl-[108px] md:flex-1"
-      >
-        <h3 class="uppercase text-2xl  md:text-[40px] font-japanese">
-          The Game Story
-        </h3>
-        <p class="opacity-60 md:text-[28px] font-secondary">
-          This is the story of the Minamoto clan who were the first Samurais to
-          ever wage a war. One of the most influential and powerful warrior
-          families in Mediaeval Japan. Their clan’s colour has always been green
-          which symbolizes the ever growing forest which thrives to give
-          everyone a prosperous life.
-        </p>
-      </div>
-      <div class="md:flex-1">
-        <img class="h-full w-full" src="/story.svg" alt="The Game Story" />
-      </div>
-    </section>
-    <section class="flex flex-col gap-4 md:gap-6 text-center">
-      <h3 class="uppercase text-2xl md:text-[40px] font-japanese">
-        Cup of Peace and Prosperity
-      </h3>
-      <p class="opacity-60 md:text-[28px] px-5 md:px-16 font-secondary">
-        For hundreds of years this green clan has fought in the tournament of
-        Remon Kiiro (Lemon Yellow) and have defeated the other two contender
-        clans - the fire-powered Red Clan and the Water-fueled Blue Clan. For
-        Years they have played dangerous tournament games and made sure that
-        Green Clan has won the Athlesia cup. A cup that symbolizes - good omen
-        and has always helped restore peace in the land. Whenever the trophy is
-        not in it’s rightful place - which is with the Green Clan the world
-        shakes and crashes and gets disbalanced. Whenever the Green Clan gets
-        the trophy home, peace and prosperity prevails.
-      </p>
-      <div style="max-width: 1026.37px" class="w-full self-center">
-        <img class="object-cover" src="/athlesia-cup.svg" alt="Athlesia Cup" />
-      </div>
-      <p class="opacity-60 md:text-[28px] px-5 font-secondary">
-        Even today, years later the battle continues to win the Athlesia Cup
-      </p>
-    </section>
+		<!-- Section - 1 -->
+		<section id="game-story" class="flex flex-col md:flex-row min-h-screen">
+			<div
+				class="flex flex-col gap-4 md:gap-6 mt-24 pl-5 px-5 md:pl-[108px] md:flex-1"
+			>
+				<h3 class="uppercase text-2xl md:text-[40px] font-japanese">
+					The Game Story
+				</h3>
+				<p class="opacity-60 md:text-[28px] font-secondary">
+					This is the story of the Minamoto clan who were the first
+					Samurais to ever wage a war. One of the most influential and
+					powerful warrior families in Mediaeval Japan. Their clan’s
+					colour has always been green which symbolizes the ever
+					growing forest which thrives to give everyone a prosperous
+					life.
+				</p>
+			</div>
+			<div class="md:flex-1">
+				<img
+					class="h-full w-full"
+					src="/story.svg"
+					alt="The Game Story"
+				/>
+			</div>
+			<button
+				onclick="togglePlay()"
+				title="Contact Sale"
+        id="icon"
+				class="fixed z-[100] bottom-10 right-8 bg-green-600 w-16 h-16 rounded-full drop-shadow-lg flex justify-center items-center text-white text-3xl hover:bg-green-700 opacity-25 hover:drop-shadow-2xl hover:animate-pulse duration-300"
+			>
+				&#9654;
+			</button>
+			<audio controls autoplay class="hidden" id="myAudio">
+				<source src="/public/bg-music.mp3" type="audio/ogg" />
+				<source src="/public/bg-music.mp3" type="audio/mpeg" />
+				Your browser does not support the audio element.
+			</audio>
+		</section>
+		<section class="flex flex-col gap-4 md:gap-6 text-center">
+			<h3 class="uppercase text-2xl md:text-[40px] font-japanese">
+				Cup of Peace and Prosperity
+			</h3>
+			<p class="opacity-60 md:text-[28px] px-5 md:px-16 font-secondary">
+				For hundreds of years this green clan has fought in the
+				tournament of Remon Kiiro (Lemon Yellow) and have defeated the
+				other two contender clans - the fire-powered Red Clan and the
+				Water-fueled Blue Clan. For Years they have played dangerous
+				tournament games and made sure that Green Clan has won the
+				Athlesia cup. A cup that symbolizes - good omen and has always
+				helped restore peace in the land. Whenever the trophy is not in
+				it’s rightful place - which is with the Green Clan the world
+				shakes and crashes and gets disbalanced. Whenever the Green Clan
+				gets the trophy home, peace and prosperity prevails.
+			</p>
+			<div style="max-width: 1026.37px" class="w-full self-center">
+				<img
+					class="object-cover animate-animation"
+					src="/athlesia-cup.svg"
+					alt="Athlesia Cup"
+				/>
+			</div>
+			<p class="opacity-60 md:text-[28px] px-5 font-secondary">
+				Even today, years later the battle continues to win the Athlesia
+				Cup
+			</p>
+		</section>
 
-    <!-- Section - 2 -->
-    <section
-      id="games"
-      class="flex flex-col gap-4 md:gap-6 text-center relative"
-    >
-      <h3
-        class="uppercase text-2xl md:text-[40px] font-japanese mt-[96px] md:mt-[276px]"
-      >
-        Athlesia Games
-      </h3>
-      <p class="opacity-60 md:text-[28px] px-5 md:px-44 font-secondary">
-        A From the mighty jenga tower, to the tricky fort carrom, from
-        badminton, langdi and the ultimate game of cricket, this clan is know to
-        win it all
-      </p>
-      <div
-        style="max-width: 760px"
-        class="grid grid-cols-3 md:flex md:justify-center flex-wrap px-5 md:px-16 -translate-y-16 h-[520px] md:h-auto self-center"
-      >
-        <img class="mx-auto md:mx-0" src="/cricket.svg" alt="" />
-        <img class="mx-auto md:mx-0" src="/football.svg" alt="" />
-        <img class="mx-auto md:mx-0" src="/throwball.svg" alt="" />
-        <img
-          style="z-index: -2"
-          class="-translate-y-24 md:-translate-y-0 mx-auto md:mx-0"
-          src="/carrom.svg"
-          alt=""
-        />
-        <img
-          style="z-index: -2"
-          class="-translate-y-24 md:-translate-y-0 mx-auto md:mx-0"
-          src="/dart.svg"
-          alt=""
-        />
-        <img
-          style="z-index: -2"
-          class="-translate-y-24 md:-translate-y-0 mx-auto md:mx-0"
-          src="/badminton.svg"
-          alt=""
-        />
-        <img
-          class="-translate-y-48 md:-translate-y-20 mx-auto md:mx-0"
-          style="z-index: -1"
-          src="/jenga.svg"
-          alt=""
-        />
-        <img
-          class="-translate-y-48 md:-translate-y-20 mx-auto md:mx-0"
-          style="z-index: -1"
-          src="/langdi.svg"
-          alt=""
-        />
-        <img
-          class="-translate-y-48 md:-translate-y-20 mx-auto md:mx-0"
-          style="z-index: -1"
-          src="/online-games.svg"
-          alt=""
-        />
-      </div>
-      <img
-        class="absolute w-full object-cover top-[90%] md:top-2/4 -z-10"
-        src="/game-moon-light.svg"
-        alt=""
-      />
-      <img
-        class="absolute w-full object-cover top-[90%] md:top-2/4 -z-10"
-        src="/games-bg.svg"
-        alt=""
-      />
-      <img
-        class="absolute w-full object-cover top-[90%] md:top-2/4 -z-10"
-        src="/games-fg.svg"
-        alt=""
-      />
-    </section>
+		<!-- Section - 2 -->
+		<section
+			id="games"
+			class="flex flex-col gap-4 md:gap-6 text-center relative"
+		>
+			<h3
+				class="uppercase text-2xl md:text-[40px] font-japanese mt-[96px] md:mt-[276px]"
+			>
+				Athlesia Games
+			</h3>
+			<p class="opacity-60 md:text-[28px] px-5 md:px-44 font-secondary">
+				A From the mighty jenga tower, to the tricky fort carrom, from
+				badminton, langdi and the ultimate game of cricket, this clan is
+				know to win it all
+			</p>
+			<div
+				style="max-width: 760px"
+				class="grid grid-cols-3 md:flex md:justify-center flex-wrap px-5 md:px-16 -translate-y-16 h-[520px] md:h-auto self-center"
+			>
+				<img class="mx-auto md:mx-0" src="/cricket.svg" alt="" />
+				<img class="mx-auto md:mx-0" src="/football.svg" alt="" />
+				<img
+					class="mx-auto md:mx-0 hover:animate-pulse"
+					src="/throwball.svg"
+					alt=""
+				/>
+				<img
+					style="z-index: -2"
+					class="-translate-y-24 md:-translate-y-0 mx-auto md:mx-0"
+					src="/carrom.svg"
+					alt=""
+				/>
+				<img
+					style="z-index: -2"
+					class="-translate-y-24 md:-translate-y-0 mx-auto md:mx-0"
+					src="/dart.svg"
+					alt=""
+				/>
+				<img
+					style="z-index: -2"
+					class="-translate-y-24 md:-translate-y-0 mx-auto md:mx-0"
+					src="/badminton.svg"
+					alt=""
+				/>
+				<img
+					class="-translate-y-48 md:-translate-y-20 mx-auto md:mx-0"
+					style="z-index: -1"
+					src="/jenga.svg"
+					alt=""
+				/>
+				<img
+					class="-translate-y-48 md:-translate-y-20 mx-auto md:mx-0"
+					style="z-index: -1"
+					src="/langdi.svg"
+					alt=""
+				/>
+				<img
+					class="-translate-y-48 md:-translate-y-20 mx-auto md:mx-0"
+					style="z-index: -1"
+					src="/online-games.svg"
+					alt=""
+				/>
+			</div>
+			<img
+				class="absolute w-full object-cover top-[90%] md:top-2/4 -z-10"
+				src="/game-moon-light.svg"
+				alt=""
+			/>
+			<img
+				class="absolute w-full object-cover top-[90%] md:top-2/4 -z-10"
+				src="/games-bg.svg"
+				alt=""
+			/>
+			<img
+				class="absolute w-full object-cover top-[90%] md:top-2/4 -z-10"
+				src="/games-fg.svg"
+				alt=""
+			/>
+		</section>
 
-    <!-- Section - 3 -->
-    <section
-      id="samurais"
-      style="background-image: url('/background.png')"
-      class="min-h-screen mt-36 md:mt-64 text-center bg-cover bg-no-repeat relative flex flex-col md:justify-between bg-top"
-    >
-      <h3 class="uppercase text-2xl md:text-[40px] font-japanese">
-        Our Samurais
-      </h3>
-      <img
-        class="hidden md:inline absolute left-0 -bottom-[50%] object-cover w-full"
-        src="/flags-grass.png"
-        alt="flags"
-      />
-      <div id="samurai-carousel" class="carousel mt-11 md:mt-40 md:mb-6"></div>
-    </section>
+		<!-- Section - 3 -->
+		<section
+			id="samurais"
+			style="background-image: url('/background.png')"
+			class="min-h-screen mt-36 md:mt-64 text-center bg-cover bg-no-repeat relative flex flex-col md:justify-between bg-top"
+		>
+			<h3 class="uppercase text-2xl md:text-[40px] font-japanese">
+				Our Samurais
+			</h3>
+			<img
+				class="hidden md:inline absolute left-0 -bottom-[50%] object-cover w-full"
+				src="/flags-grass.png"
+				alt="flags"
+			/>
+			<div
+				id="samurai-carousel"
+				class="carousel mt-11 md:mt-40 md:mb-6"
+			></div>
+		</section>
 
-    <!-- Section - 4 -->
-    <section
-      id="battles"
-      class="flex flex-col md:flex-row text-center mt-20 md:mt-64 min-h-screen"
-    >
-      <div class="flex flex-col gap-6 md:gap-10 px-5 md:order-1 md:flex-1">
-        <h3 class="uppercase text-2xl md:text-[40px] font-japanese">
-          IT’s Battles TIme
-        </h3>
-        <div class="schedule-carousel font-secondary">
-          <div class="carousel-cell w-full">
-            <!-- #region -->
-            <div
-              class="py-1 min-w-[72px] max-w-[350px] text-black text-xl schedule-label md:mx-auto"
-            >
-              Thu, 1st December
-            </div>
-            <span
-              class="flex justify-between md:justify-center md:text-4xl uppercase items-center mt-6 md:gap-24"
-            >
-              cricket
-              <span
-                class="font-japanese flex gap-4 items-center flex-[0.8] md:flex-grow-0"
-              >
-                <span class="text-green-400">Green</span>
-                <img class="w-8" src="/swords.svg" alt="" />
-                <span class="text-red-400">Red</span>
-              </span>
-            </span>
-            <span
-              class="flex justify-between md:justify-center md:text-4xl uppercase items-center mt-6 md:gap-24 md:mt-16"
-            >
-              Football
-              <span
-                class="font-japanese flex gap-4 items-center flex-[0.8] mb-6 md:flex-grow-0"
-              >
-                <span class="text-green-400">Green</span>
-                <img class="w-8" src="/swords.svg" alt="" />
-                <span class="text-blue-400">Blue</span>
-              </span>
-            </span>
-            <!-- endregion -->
-            <!-- #region -->
-            <div
-              class="py-1 min-w-[72px] max-w-[350px] text-black text-xl schedule-label md:mx-auto"
-            >
-              Thu, 8th December
-            </div>
-            <span class="flex justify-between md:justify-center md:text-4xl uppercase items-center mt-6 md:gap-24">
-              carrom
-              <span class="font-japanese flex gap-4 items-center flex-[0.8] md:flex-grow-0">
-                <span class="text-green-400">Green</span>
-                <img class="w-8" src="/swords.svg" alt="" />
-                <span class="text-red-400">Red</span>
-              </span>
-            </span>
-            <span class="flex justify-between md:justify-center md:text-4xl uppercase items-center mt-6 md:gap-24 md:mt-16">
-              Dart
-              <span class="font-japanese flex gap-1 items-center flex-[0.8] md:flex-grow-0">
-                <span class="text-green-400">Green</span>
-                <img class="w-8" src="/swords.svg" alt="" />
-                <span class="text-blue-400">Blue</span>
-                <img class="w-8" src="/swords.svg" alt="" />
-                <span class="text-red-400">Red</span>
-              </span>
-            </span>
-            <!-- endregion -->
-          </div>
-          <div class="carousel-cell w-full">
-            <!-- #region -->
-            <div class="py-1 min-w-[72px] max-w-[350px] text-black text-xl schedule-label md:mx-auto">
-              Thu, 15th December
-            </div>
-            <span class="flex justify-between md:justify-center md:text-4xl uppercase items-center mt-6 md:gap-24">
-              cricket
-              <span class="font-japanese flex gap-4 items-center flex-[0.8] md:flex-grow-0">
-                <span class="text-green-400">Green</span>
-                <img class="w-8" src="/swords.svg" alt="" />
-                <span class="text-blue-400">Blue</span>
-              </span>
-            </span>
-            <span class="flex justify-between md:justify-center md:text-4xl uppercase items-center mt-6 md:gap-24 md:mt-16">
-              Throwball
-              <span class="font-japanese flex gap-4 items-center flex-[0.8] mb-6 md:flex-grow-0">
-                <span class="text-green-400">Green</span>
-                <img class="w-8" src="/swords.svg" alt="" />
-                <span class="text-red-400">Red</span>
-              </span>
-            </span>
-            <!-- endregion -->
-            <!-- #region -->
-            <div
-              class="py-1 min-w-[72px] max-w-[350px] text-black text-xl schedule-label md:mx-auto"
-            >
-              Thu, 22nd December
-            </div>
-            <span class="flex justify-between md:justify-center md:text-4xl uppercase items-center mt-6 md:gap-24">
-              carrom
-              <span class="font-japanese flex gap-4 items-center flex-[0.8] mb-6 md:flex-grow-0">
-                <span class="text-green-400">Green</span>
-                <img class="w-8" src="/swords.svg" alt="" />
-                <span class="text-red-400">Blue</span>
-              </span>
-            </span>
-            <span class="flex justify-between md:justify-center md:text-4xl uppercase items-center mt-6 md:gap-24 md:mt-16">
-              Jenga
-              <span class="font-japanese flex gap-4 items-center flex-[0.8] mb-6 md:flex-grow-0">
-                <span class="text-green-400">Green</span>
-                <img class="w-8" src="/swords.svg" alt="" />
-                <span class="text-blue-400">Blue</span>
-                <img class="w-8" src="/swords.svg" alt="" />
-                <span class="text-red-400">Red</span>
-              </span>
-            </span>
-            <!-- endregion -->
-          </div>
-          <div class="carousel-cell w-full">
-            <!-- #region -->
-            <div class="py-1 min-w-[72px] max-w-[350px] text-black text-xl schedule-label md:mx-auto">
-              Thu, 29th December
-            </div>
-            <span class="flex justify-between md:justify-center md:text-4xl uppercase items-center mt-6 md:gap-24">
-              Football
-              <span class="font-japanese flex gap-4 items-center flex-[0.8] md:flex-grow-0">
-                <span class="text-green-400">Green</span>
-                <img class="w-8" src="/swords.svg" alt="" />
-                <span class="text-red-400">Red</span>
-              </span>
-            </span>
-            <span class="flex justify-between md:justify-center md:text-4xl uppercase items-center mt-6 md:gap-24 md:mt-16">
-              Throwball
-              <span class="font-japanese flex gap-4 items-center flex-[0.8] mb-6 md:flex-grow-0">
-                <span class="text-green-400">Green</span>
-                <img class="w-8" src="/swords.svg" alt="" />
-                <span class="text-blue-400">Blue</span>
-              </span>
-            </span>
-            <!-- endregion -->
-            <!-- #region -->
-            <div
-              class="py-1 min-w-[72px] max-w-[350px] text-black text-xl schedule-label md:mx-auto"
-            >
-            Thu, 5th December
-            </div>
-            <span class="flex justify-between md:justify-center md:text-4xl uppercase items-center mt-6 md:gap-24">
-              Badminton
-              <span class="font-japanese flex gap-4 items-center flex-[0.8] mb-6 md:flex-grow-0">
-                <span class="text-red-400">Red</span>
-                <img class="w-8" src="/swords.svg" alt="" />
-                <span class="text-green-400">Green</span>
-                <img class="w-8" src="/swords.svg" alt="" />
-                <span class="text-red-400">Blue</span>
-
-              </span>
-            </span>
-            <span class="flex justify-between md:justify-center md:text-4xl uppercase items-center mt-6 md:gap-24 md:mt-16">
-              Langdi
-              <span class="font-japanese flex gap-4 items-center flex-[0.8] mb-6 md:flex-grow-0">
-                <span class="text-green-400">Green</span>
-                <img class="w-8" src="/swords.svg" alt="" />
-                <span class="text-blue-400">Blue</span>
-                <img class="w-8" src="/swords.svg" alt="" />
-                <span class="text-red-400">Red</span>
-              </span>
-            </span>
-            <!-- endregion -->
-          </div>
-          <div class="carousel-cell w-full">
-            <!-- #region -->
-            <div class="py-1 min-w-[72px] max-w-[350px] text-black text-xl schedule-label md:mx-auto">
-              Thu, 12th December
-            </div>
-            <span class="flex justify-center md:justify-center md:text-4xl uppercase items-center mt-6 md:gap-24">
-              <span class="font-japanese flex gap-4 justify-center items-center flex-[0.8] mb-6">
-                <span class="text-green-400">All Indoor Game FInals</span>
-              </span>
-            </span>
-            <!-- endregion -->
-            <!-- #region -->
-            <div
-              class="py-1 min-w-[72px] max-w-[350px] text-black text-xl schedule-label md:mx-auto"
-            >
-            Sat, 14th January
-            </div>
-            <span class="flex justify-between md:justify-center md:text-4xl uppercase items-center mt-6 md:gap-24">
-              <span class="font-japanese flex justify-center items-center flex-[0.8] ">
-                <span class="text-green-400">Minutes to win it games</span>
-              </span>
-            </span>
-            <span class="flex justify-between md:justify-center md:text-4xl uppercase items-center mt-6 md:gap-24 md:mt-16">
-              <span class="font-japanese flex  justify-center items-center flex-[0.8] ">
-                <span class="text-green-400">All outdoor game finals</span>
-              </span>
-            </span>
-            <span class="flex justify-between md:justify-center md:text-4xl uppercase items-center mt-6 md:gap-24 md:mt-16">
-              <span class="font-japanese flex  justify-center items-center flex-[0.8] ">
-                <span class="text-green-400">Declaring the Champion</span>
-              </span>
-            </span>
-            <!-- endregion -->
-          </div>
-        </div>
-      </div>
-      <div
-        style="
-          background: linear-gradient(
-            180deg,
-            rgba(0, 16, 7, 0) 0%,
-            #001007 100%
-          );
-        "
-        class="mt-9 h-[400px] md:flex-[0.6] relative overflow-x-hidden overflow-y-hidden"
-      >
-        <img class="absolute w-full object-cover" src="/gate.svg" alt="" />
-        <img
-          class="absolute object-cover z-10 left-full md:left-0 md:translate-x-48 top-3/4 md:bottom-0 scale-[3.2] md:scale-150"
-          src="/fn-fg.svg"
-          alt=""
-        />
-      </div>
-    </section>
-    <section
-    id="samurais"
-    style="background-image: url('/game-moon-light.svg')"
-    class="min-h-screen text-center bg-cover bg-no-repeat relative justify-between flex flex-col bg-top"
-  >
-  <div class="flex flex-col items-center justify-between">
-    <div class="w-[80px] md:w-[162px] mb-8">
-      <img class="h-100 w-100" src="/logo.svg" alt="Green Samurais" />
-    </div>
-    <h3 class="uppercase text-2xl mb-8 md:text-[40px] font-japanese">
-      Green Samurais
-    </h3>
-    <h3 class="uppercase text-2xl text-green-400 md:text-[40px] font-japanese">
-      The Veterans of victory
-    </h3>
-  </div>
-  <div class="z-50">
-    <h3 class="text-2xl md:text-[40px] font-secondary">
-      Powered by Lemon Yellow
-    </h3>
-    <h3 class="text-2xl md:text-4xl font-secondary pb-6">
-      Sameer Bhambere, Amit Bhambere & Priyanka Baya
-    </h3>
-    <h6 class="text-2xl md:text-xl font-secondary">
-      Copyright 2022
-    </h6>
-  </div>
-    <img
-      class="md:inline absolute left-0 -bottom-[20%] object-cover w-full "
-      src="/grass.svg"
-      alt="flags"
-    />
-  </section>
-    <script type="module" src="/src/main.ts"></script>
-    <script defer>
-      const samuraiCarousel = document.querySelector("#samurai-carousel");
-      for (let i = 1; i <= 21; i++) {
-        samuraiCarousel.innerHTML += `<div class="carousel-cell w-full flex items-center justify-center h-">
+		<!-- Section - 4 -->
+		<section
+			id="battles"
+			class="flex flex-col md:flex-row text-center mt-20 md:mt-64 min-h-screen"
+		>
+			<div
+				class="flex flex-col gap-6 md:gap-10 px-5 md:order-1 md:flex-1"
+			>
+				<h3 class="uppercase text-2xl md:text-[40px] font-japanese">
+					IT’s Battles TIme
+				</h3>
+				<div class="schedule-carousel font-secondary">
+					<div class="carousel-cell w-full">
+						<!-- #region -->
+						<div
+							class="py-1 min-w-[72px] max-w-[350px] text-black text-xl schedule-label md:mx-auto"
+						>
+							Thu, 1st December
+						</div>
+						<span
+							class="flex justify-between md:justify-center md:text-4xl uppercase items-center mt-6 md:gap-24"
+						>
+							cricket
+							<span
+								class="font-japanese flex gap-4 items-center flex-[0.8] md:flex-grow-0"
+							>
+								<span class="text-green-400">Green</span>
+								<img class="w-8" src="/swords.svg" alt="" />
+								<span class="text-red-400">Red</span>
+							</span>
+						</span>
+						<span
+							class="flex justify-between md:justify-center md:text-4xl uppercase items-center mt-6 md:gap-24 md:mt-16"
+						>
+							Football
+							<span
+								class="font-japanese flex gap-4 items-center flex-[0.8] mb-6 md:flex-grow-0"
+							>
+								<span class="text-green-400">Green</span>
+								<img class="w-8" src="/swords.svg" alt="" />
+								<span class="text-blue-400">Blue</span>
+							</span>
+						</span>
+						<!-- endregion -->
+						<!-- #region -->
+						<div
+							class="py-1 min-w-[72px] max-w-[350px] text-black text-xl schedule-label md:mx-auto"
+						>
+							Thu, 8th December
+						</div>
+						<span
+							class="flex justify-between md:justify-center md:text-4xl uppercase items-center mt-6 md:gap-24"
+						>
+							carrom
+							<span
+								class="font-japanese flex gap-4 items-center flex-[0.8] md:flex-grow-0"
+							>
+								<span class="text-green-400">Green</span>
+								<img class="w-8" src="/swords.svg" alt="" />
+								<span class="text-red-400">Red</span>
+							</span>
+						</span>
+						<span
+							class="flex justify-between md:justify-center md:text-4xl uppercase items-center mt-6 md:gap-24 md:mt-16"
+						>
+							Dart
+							<span
+								class="font-japanese flex gap-1 items-center flex-[0.8] md:flex-grow-0"
+							>
+								<span class="text-green-400">Green</span>
+								<img class="w-8" src="/swords.svg" alt="" />
+								<span class="text-blue-400">Blue</span>
+								<img class="w-8" src="/swords.svg" alt="" />
+								<span class="text-red-400">Red</span>
+							</span>
+						</span>
+						<!-- endregion -->
+					</div>
+					<div class="carousel-cell w-full">
+						<!-- #region -->
+						<div
+							class="py-1 min-w-[72px] max-w-[350px] text-black text-xl schedule-label md:mx-auto"
+						>
+							Thu, 15th December
+						</div>
+						<span
+							class="flex justify-between md:justify-center md:text-4xl uppercase items-center mt-6 md:gap-24"
+						>
+							cricket
+							<span
+								class="font-japanese flex gap-4 items-center flex-[0.8] md:flex-grow-0"
+							>
+								<span class="text-green-400">Green</span>
+								<img class="w-8" src="/swords.svg" alt="" />
+								<span class="text-blue-400">Blue</span>
+							</span>
+						</span>
+						<span
+							class="flex justify-between md:justify-center md:text-4xl uppercase items-center mt-6 md:gap-24 md:mt-16"
+						>
+							Throwball
+							<span
+								class="font-japanese flex gap-4 items-center flex-[0.8] mb-6 md:flex-grow-0"
+							>
+								<span class="text-green-400">Green</span>
+								<img class="w-8" src="/swords.svg" alt="" />
+								<span class="text-red-400">Red</span>
+							</span>
+						</span>
+						<!-- endregion -->
+						<!-- #region -->
+						<div
+							class="py-1 min-w-[72px] max-w-[350px] text-black text-xl schedule-label md:mx-auto"
+						>
+							Thu, 22nd December
+						</div>
+						<span
+							class="flex justify-between md:justify-center md:text-4xl uppercase items-center mt-6 md:gap-24"
+						>
+							carrom
+							<span
+								class="font-japanese flex gap-4 items-center flex-[0.8] mb-6 md:flex-grow-0"
+							>
+								<span class="text-green-400">Green</span>
+								<img class="w-8" src="/swords.svg" alt="" />
+								<span class="text-red-400">Blue</span>
+							</span>
+						</span>
+						<span
+							class="flex justify-between md:justify-center md:text-4xl uppercase items-center mt-6 md:gap-24 md:mt-16"
+						>
+							Jenga
+							<span
+								class="font-japanese flex gap-4 items-center flex-[0.8] mb-6 md:flex-grow-0"
+							>
+								<span class="text-green-400">Green</span>
+								<img class="w-8" src="/swords.svg" alt="" />
+								<span class="text-blue-400">Blue</span>
+								<img class="w-8" src="/swords.svg" alt="" />
+								<span class="text-red-400">Red</span>
+							</span>
+						</span>
+						<!-- endregion -->
+					</div>
+					<div class="carousel-cell w-full">
+						<!-- #region -->
+						<div
+							class="py-1 min-w-[72px] max-w-[350px] text-black text-xl schedule-label md:mx-auto"
+						>
+							Thu, 29th December
+						</div>
+						<span
+							class="flex justify-between md:justify-center md:text-4xl uppercase items-center mt-6 md:gap-24"
+						>
+							Football
+							<span
+								class="font-japanese flex gap-4 items-center flex-[0.8] md:flex-grow-0"
+							>
+								<span class="text-green-400">Green</span>
+								<img class="w-8" src="/swords.svg" alt="" />
+								<span class="text-red-400">Red</span>
+							</span>
+						</span>
+						<span
+							class="flex justify-between md:justify-center md:text-4xl uppercase items-center mt-6 md:gap-24 md:mt-16"
+						>
+							Throwball
+							<span
+								class="font-japanese flex gap-4 items-center flex-[0.8] mb-6 md:flex-grow-0"
+							>
+								<span class="text-green-400">Green</span>
+								<img class="w-8" src="/swords.svg" alt="" />
+								<span class="text-blue-400">Blue</span>
+							</span>
+						</span>
+						<!-- endregion -->
+						<!-- #region -->
+						<div
+							class="py-1 min-w-[72px] max-w-[350px] text-black text-xl schedule-label md:mx-auto"
+						>
+							Thu, 5th December
+						</div>
+						<span
+							class="flex justify-between md:justify-center md:text-4xl uppercase items-center mt-6 md:gap-24"
+						>
+							Badminton
+							<span
+								class="font-japanese flex gap-4 items-center flex-[0.8] mb-6 md:flex-grow-0"
+							>
+								<span class="text-red-400">Red</span>
+								<img class="w-8" src="/swords.svg" alt="" />
+								<span class="text-green-400">Green</span>
+								<img class="w-8" src="/swords.svg" alt="" />
+								<span class="text-red-400">Blue</span>
+							</span>
+						</span>
+						<span
+							class="flex justify-between md:justify-center md:text-4xl uppercase items-center mt-6 md:gap-24 md:mt-16"
+						>
+							Langdi
+							<span
+								class="font-japanese flex gap-4 items-center flex-[0.8] mb-6 md:flex-grow-0"
+							>
+								<span class="text-green-400">Green</span>
+								<img class="w-8" src="/swords.svg" alt="" />
+								<span class="text-blue-400">Blue</span>
+								<img class="w-8" src="/swords.svg" alt="" />
+								<span class="text-red-400">Red</span>
+							</span>
+						</span>
+						<!-- endregion -->
+					</div>
+					<div class="carousel-cell w-full">
+						<!-- #region -->
+						<div
+							class="py-1 min-w-[72px] max-w-[350px] text-black text-xl schedule-label md:mx-auto"
+						>
+							Thu, 12th December
+						</div>
+						<span
+							class="flex justify-center md:justify-center md:text-4xl uppercase items-center mt-6 md:gap-24"
+						>
+							<span
+								class="font-japanese flex gap-4 justify-center items-center flex-[0.8] mb-6"
+							>
+								<span class="text-green-400"
+									>All Indoor Game FInals</span
+								>
+							</span>
+						</span>
+						<!-- endregion -->
+						<!-- #region -->
+						<div
+							class="py-1 min-w-[72px] max-w-[350px] text-black text-xl schedule-label md:mx-auto"
+						>
+							Sat, 14th January
+						</div>
+						<span
+							class="flex justify-between md:justify-center md:text-4xl uppercase items-center mt-6 md:gap-24"
+						>
+							<span
+								class="font-japanese flex justify-center items-center flex-[0.8]"
+							>
+								<span class="text-green-400"
+									>Minutes to win it games</span
+								>
+							</span>
+						</span>
+						<span
+							class="flex justify-between md:justify-center md:text-4xl uppercase items-center mt-6 md:gap-24 md:mt-16"
+						>
+							<span
+								class="font-japanese flex justify-center items-center flex-[0.8]"
+							>
+								<span class="text-green-400"
+									>All outdoor game finals</span
+								>
+							</span>
+						</span>
+						<span
+							class="flex justify-between md:justify-center md:text-4xl uppercase items-center mt-6 md:gap-24 md:mt-16"
+						>
+							<span
+								class="font-japanese flex justify-center items-center flex-[0.8]"
+							>
+								<span class="text-green-400"
+									>Declaring the Champion</span
+								>
+							</span>
+						</span>
+						<!-- endregion -->
+					</div>
+				</div>
+			</div>
+			<div
+				style="
+					background: linear-gradient(
+						180deg,
+						rgba(0, 16, 7, 0) 0%,
+						#001007 100%
+					);
+				"
+				class="mt-9 h-[400px] md:flex-[0.6] relative overflow-x-hidden overflow-y-hidden"
+			>
+				<img
+					class="absolute w-full object-cover"
+					src="/gate.svg"
+					alt=""
+				/>
+				<img
+					class="absolute object-cover z-10 left-full md:left-0 md:translate-x-48 top-3/4 md:bottom-0 scale-[3.2] md:scale-150"
+					src="/fn-fg.svg"
+					alt=""
+				/>
+			</div>
+		</section>
+		<section
+			id="samurais"
+			style="background-image: url('/game-moon-light.svg')"
+			class="min-h-screen text-center bg-cover bg-no-repeat relative justify-between flex flex-col bg-top"
+		>
+			<div class="flex flex-col items-center justify-between">
+				<div class="w-[80px] md:w-[162px] mb-8">
+					<img
+						class="h-100 w-100"
+						src="/logo.svg"
+						alt="Green Samurais"
+					/>
+				</div>
+				<h3
+					class="uppercase text-2xl mb-8 md:text-[40px] font-japanese"
+				>
+					Green Samurais
+				</h3>
+				<h3
+					class="uppercase text-2xl text-green-400 md:text-[40px] font-japanese"
+				>
+					The Veterans of victory
+				</h3>
+			</div>
+			<div class="z-50">
+				<h3 class="text-2xl md:text-[40px] font-secondary">
+					Powered by Lemon Yellow
+				</h3>
+				<h3 class="text-2xl md:text-4xl font-secondary pb-6">
+					Sameer Bhambere, Amit Bhambere & Priyanka Baya
+				</h3>
+				<h6 class="text-2xl md:text-xl font-secondary">
+					Copyright 2022
+				</h6>
+			</div>
+			<img
+				class="md:inline absolute left-0 -bottom-[20%] object-cover w-full"
+				src="/grass.svg"
+				alt="flags"
+			/>
+		</section>
+		<script type="module" src="/src/main.ts"></script>
+		<script defer>
+			const samuraiCarousel = document.querySelector("#samurai-carousel");
+			for (let i = 1; i <= 21; i++) {
+				samuraiCarousel.innerHTML += `<div class="carousel-cell w-full flex items-center justify-center h-">
           <img
             class="w-[264px] md:w-[519px] select-none pointer-events-none"
             src="/jerseys/${i}.png"
             alt=""
           />
         </div>`;
-      }
+			}
 
-      setTimeout(() => {
-        new Flickity(".carousel", {
-          pageDots: false,
-          autoplay: true,
-          draggable: true,
-          wrapAround: true,
-          cellSelector: ".carousel-cell",
-        });
-        new Flickity(".schedule-carousel", {
-          pageDots: false,
-          autoplay: false,
-          draggable: true,
-          wrapAround: false,
-          cellSelector: ".carousel-cell",
-        });
-      }, 500);
-    </script>
-  </body>
+			setTimeout(() => {
+				new Flickity(".carousel", {
+					pageDots: false,
+					autoplay: true,
+					draggable: true,
+					wrapAround: true,
+					cellSelector: ".carousel-cell",
+				});
+				new Flickity(".schedule-carousel", {
+					pageDots: false,
+					autoplay: false,
+					draggable: true,
+					wrapAround: false,
+					cellSelector: ".carousel-cell",
+				});
+			}, 500);
+			var myAudio = document.getElementById("myAudio");
+
+			function togglePlay() {
+				return myAudio.paused ? myAudio.play() : myAudio.pause();
+			}
+		</script>
+	</body>
 </html>
