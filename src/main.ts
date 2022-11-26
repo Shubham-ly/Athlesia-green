@@ -5,7 +5,7 @@ games.forEach((game: any, index) => {
   game.style.setProperty("--animation-order", index);
 });
 
-const callback = (entries: any, observer: any) => {
+const callback = (entries: any) => {
   entries.forEach((entry: any) => {
     if (entry.isIntersecting) {
       entry.target.classList.add("fade-in");
